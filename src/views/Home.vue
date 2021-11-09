@@ -13,6 +13,10 @@
           src="//sf1-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/gongquhunjian_1080.min.mp4"
         ></video>
       </div>
+      <h1 class="banner-title">
+        和优秀的人 做有挑战的事
+        <div>JOIN BYTEDANCE</div>
+      </h1>
     </div>
   </div>
 </template>

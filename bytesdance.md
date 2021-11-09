@@ -68,6 +68,25 @@ pluginOptions: {
 
 ### css
 
+#### 伪元素和伪类
+
+```shell
+伪类和伪元素的根本区别在于: 是否创造了新元素
+- 伪元素:
+	不存在DOM文档中,是虚拟的元素,
+	::after
+	::before
+- 伪类
+	存在DOM文档中,逻辑上存在但是无须标识
+	:hover
+	:first-child 等
+	
+::before  向选定的元素前插入内容
+	使用content属性指定要插入的内容
+::after 向选定的元素后插入内容
+    使用content属性指定要插入的内容	
+```
+
 #### vh
 
 ```shell
