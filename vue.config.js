@@ -1,6 +1,15 @@
-// const path = require("path");
+const path = require("path");
 module.exports = {
   lintOnSave: "warning",
+  pluginOptions: {
+    "style-resources-loader": {
+      preProcessor: "less",
+      patterns: [
+        path.resolve(__dirname, "src/assets/style/varible.less"),
+        path.resolve(__dirname, "src/assets/style/mixin.less"),
+      ],
+    },
+  },
   pages: {
     index: {
       // page的入口

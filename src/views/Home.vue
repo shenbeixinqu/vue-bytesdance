@@ -27,6 +27,30 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.home {
+.banner {
+  height: 100vh;
+  min-height: 400px;
+  min-width: @main-weight;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(51, 112, 255, 0.2);
+  position: relative;
+  .video-wrapper {
+    font-size: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+    .video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 </style>
