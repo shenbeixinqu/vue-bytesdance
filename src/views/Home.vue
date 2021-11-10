@@ -15,8 +15,24 @@
       </div>
       <h1 class="banner-title">
         和优秀的人 做有挑战的事
-        <div>JOIN BYTEDANCE</div>
+        <div class="subTitle">JOIN BYTEDANCE</div>
       </h1>
+    </div>
+
+    <!--产品-->
+    <div class="main">
+      <div ref="product" class="product">
+        <h1 class="title">Inspire creativity, enrich life</h1>
+        <div class="desc">
+          截至目前，字节跳动产品已覆盖超过 150 个国家和地区，75 个语种
+        </div>
+        <ul class="product-list">
+          <li class="product-item" v-for="(item, key) in products" :key="key">
+            <img :src="item.logo" alt />
+            <div>{{ item.title }}</div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -25,7 +41,14 @@
 export default {
   name: "home",
   data() {
-    return {};
+    return {
+      products: [],
+    };
+  },
+  created() {
+    this.request.get("/products").then((response) => {
+      this.products = response;
+    });
   },
 };
 </script>
@@ -54,6 +77,32 @@ export default {
       object-fit: cover;
       width: 100%;
       height: 100%;
+    }
+  }
+  &-title {
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+    .subTitle {
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: linear-gradient(
+          270deg,
+          hsla(0, 0%, 100%, 0),
+          #fff 47%,
+          hsla(0, 0%, 100%, 0)
+        );
+        height: 2px;
+        width: 89px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      position: relative;
+      margin-top: 10px;
+      font-size: @font-size-base;
+      letter-spacing: 20px;
     }
   }
 }

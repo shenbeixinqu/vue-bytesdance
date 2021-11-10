@@ -10,6 +10,10 @@ module.exports = {
       ],
     },
   },
+  outputDir: "server/dist",
+  devServer: {
+    proxy: "http://123.57.204.48:3000",
+  },
   pages: {
     index: {
       // page的入口

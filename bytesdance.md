@@ -66,6 +66,101 @@ pluginOptions: {
 
 
 
+### vue
+
+#### axios
+
+```shell
+安装:
+	npm install axios
+```
+
+### es6
+
+#### Promise
+
+```shell
+Promise是一个构造函数,自己有all,reject,resolve方法,原型上有then,catch方法
+所以用Promise new出来的对象肯定有then, catch方法
+```
+
+```shell
+# 构造一个Promise
+var p = new Promise( (resolve, reject) => {
+                setTimeout(() => {
+                    console.log("执行完成");
+                    resolve("随便什么数据")
+                }, 2000)
+})
+Promise的构造函数接受一个函数参数,并且传入两个参数:resolve,reject,表示成功回调和失败回调 
+上面代码中,2秒后,输出执行完成,并且调用resolve方法
+我们在用Promsie的时候一般是包在一个函数中,在需要的时候运行这个函数
+```
+
+```shell
+# 包装后调用then
+function runAsync() {
+            var p = new Promise( (resolve, reject) => {
+                setTimeout(() => {
+                    console.log("执行完成");
+                    resolve("随便什么数据")
+                }, 2000)
+            });
+            return p
+        }
+		
+        runAsync().then((data) => {
+            console.log(data);
+        })
+ then接受一个函数参数,会拿到runAsync调用resolve是传的参数,运行代码,2秒后会输出执行完成,紧接着输出"随便什么数据"
+```
+
+```shell
+# reject用法
+reject的作用就是把Promise的状态置为rejected,这样我们在then中就能捕捉到,然后执行"失败情况的回调"
+ function getNumber() {
+            var p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    var num = Math.ceil(Math.random()*10); // 生成1-10的随机数
+                    if (num<=5){
+                        resolve(num)
+                    } else {
+                        reject("数太大了", num)
+                    }
+                }, 1000)
+            })
+            return p
+        }
+
+        getNumber().then(
+            (data) => {
+                console.log("resolve");
+                console.log(data);
+            },
+            (reason, data) => {
+                console.log("reject");
+                console.log(reason);
+            }
+        )
+        运行getNumber并且在then中传了两个参数,then方法可以接受两个参数,分别对应resolve和reject的回调,所以我们能够拿到他们传过来的数据
+```
+
+```shell
+# catch的用法
+getNumber().then(
+            (data) => {
+                console.log("resolve");
+                console.log(data);
+            })
+            .catch((reason) => {
+            	console.log("rejected")
+            	console.log(reason)
+            })
+        效果和写在then的第二个参数里面一样,如果都写上,只会进入执行then的第二个参数的方法里,不过还有另外一个作用,在执行resolve的回调时,如果抛出异常,会进入到catch方法中
+```
+
+
+
 ### css
 
 #### 伪元素和伪类
