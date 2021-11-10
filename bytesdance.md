@@ -189,8 +189,6 @@ getNumber().then(
 1vh = 1% * 视口高度
 ```
 
-
-
 #### video
 
 ```shell
@@ -242,6 +240,27 @@ overflow: hidden 的作用
 3- 解决外边距塌陷
 	父元素内部有子元素,如果子元素添加margin-top样式,那么父级元素会跟着下来,造成外边距塌陷,因此给父元素添加
 	overflow:hidden就可以解决
+```
+
+#### background
+
+**background-size**
+
+```shell
+background-size: length|percentage|cover|contain
+	length: 设置宽高 第一个值为宽,第二个值为高  如果值设置一个值,第二个会被设置成auto
+	percentage: 以父元素的百分比来设置图像的宽高 第一个值为宽,第二个值为高  如果值设置一个值,第二个会被设置成auto
+	cover: 把背景图像扩展至足够大,使背景图像完全覆盖背景区域
+	contain: 把图像扩展至最大尺寸,使宽高完全适应内容区域
+```
+
+**background-position**
+
+```shell
+background-position:
+	top left| top center |center left  如果仅规定一个关键词,第二个值将是center
+	x% y% 第一个值是水平位置,第二个位置是垂直位置 如果仅规定给一个值 另一个值是50%
+	xpos ypos 第一个值是水平位置,第二个值是垂直位置
 ```
 
 

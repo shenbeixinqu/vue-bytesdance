@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="banner">
+    <div ref="banner" class="banner content-item-block">
       <div class="video-wrapper">
         <video
           ref="video"
@@ -21,7 +21,7 @@
 
     <!--产品-->
     <div class="main">
-      <div ref="product" class="product">
+      <div ref="product" class="product content-item-block">
         <h1 class="title">Inspire creativity, enrich life</h1>
         <div class="desc">
           截至目前，字节跳动产品已覆盖超过 150 个国家和地区，75 个语种
@@ -54,6 +54,17 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.home {
+  .main {
+    width: @main-weight;
+    margin: auto;
+  }
+  .content-item-block {
+    .title {
+      font-size: @font-size-larger;
+    }
+  }
+}
 .banner {
   height: 100vh;
   min-height: 400px;
@@ -104,6 +115,23 @@ export default {
       font-size: @font-size-base;
       letter-spacing: 20px;
     }
+  }
+}
+//产品
+.product {
+  margin-top: 40px;
+  text-align: center;
+  padding: 40px;
+  background: url(//sf1-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/global.png);
+  background-repeat: no-repeat;
+  background-position: 0 370px;
+  .desc {
+    margin: 40px 0;
+  }
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 </style>
