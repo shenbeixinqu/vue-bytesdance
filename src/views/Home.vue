@@ -133,5 +133,34 @@ export default {
     justify-content: space-between;
     width: 100%;
   }
+  &-item {
+    width: 90px;
+    cursor: pointer;
+    &:nth-child(1),
+    &:nth-child(9) {
+      margin-top: 116px;
+    }
+    &:nth-child(2),
+    &:nth-child(8) {
+      margin-top: 80px;
+    }
+    &:nth-child(3),
+    &:nth-child(7) {
+      margin-top: 55px;
+    }
+    &:nth-child(4),
+    &:nth-child(6) {
+      margin-top: 30px;
+    }
+    &:hover {
+      
+    }
+    img {
+      width: 90px;
+      height: 90px;
+      border-radius: 19px;
+      margin-bottom: 10px;
+    }
+  }
 }
 </style>
