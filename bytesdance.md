@@ -263,5 +263,24 @@ background-position:
 	xpos ypos 第一个值是水平位置,第二个值是垂直位置
 ```
 
+#### transform
+
+```shell
+transform: scale(数值)
+	数值>1 则放大,数值<1 则缩小
+```
+
+```shell
+transform-origin: 位置参数(bottom|top|center|right|left)
+transform-origin:bottom  以原元素底部为基线进行放大或者缩小
+```
+
+#### box-shadow
+
+```shell
+box-shadow: 2px (x-坐标值), 2px(y-坐标值), 5px(模糊度) #000(颜色) 
+box-shadow: inset(指定为内阴影) 2px (x-坐标值), 2px(y-坐标值), 5px(模糊度) #000(颜色) 
+```
+
 
 

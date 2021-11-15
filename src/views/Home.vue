@@ -33,6 +33,33 @@
           </li>
         </ul>
       </div>
+
+      <!--职位-->
+      <div class="job-category content-item-block">
+        <h2 class="job-category-title">探索你感兴趣的职位</h2>
+        <ul class="job-category-list">
+          <li
+            v-for="item in jobCategories"
+            :key="item.id"
+            class="job-category-item"
+          >
+            <div class="image" :style="`background:url(${item.image})`">
+              <span>{{ item.zh_name }}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!--字节范-->
+      <div class="byteStandard content-item-block">
+        <h1 class="title">字节范</h1>
+        <div class="desc">字节范是字节跳动企业文化的重要组成部分，是我们共同认可的行为准则</div>
+        <div class="content">
+          <div class="image">
+            <span>111</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -43,11 +70,15 @@ export default {
   data() {
     return {
       products: [],
+      jobCategories: [],
     };
   },
   created() {
     this.request.get("/products").then((response) => {
       this.products = response;
+    });
+    this.request.get("/job-categories").then((response) => {
+      this.jobCategories = response;
     });
   },
 };
@@ -153,7 +184,14 @@ export default {
       margin-top: 30px;
     }
     &:hover {
-      
+      color: @main-color;
+      img {
+        border-radius: 19px;
+
+        transform: scale(1.2);
+        transform-origin: bottom;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
     }
     img {
       width: 90px;
@@ -162,5 +200,36 @@ export default {
       margin-bottom: 10px;
     }
   }
+}
+
+// 职位
+.job-category {
+  text-align: center;
+  margin-top: 90px;
+  &-list {
+    margin-top: 70px;
+  }
+  &-item {
+    float: left;
+    margin-bottom: 16px;
+    .image {
+      width: 250px;
+      height: 250px;
+      line-height: 250px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 50%;
+      margin: 0 auto;
+
+      background-position: center;
+      overflow: hidden;
+    }
+  }
+}
+
+// 字节范
+.byteStandard {
+  padding: 40px 40px;
+  overflow: hidden;
 }
 </style>
