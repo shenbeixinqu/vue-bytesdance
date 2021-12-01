@@ -12,8 +12,8 @@ const routes = [
   {
     path: "/products",
     name: "products",
-    component: () => import("@/views/Products")
-  }
+    component: () => import("@/views/Products"),
+  },
 ];
 
 const router = new VueRouter({

@@ -1,7 +1,10 @@
 <template>
   <div class="product">
     <ul class="product-fullpage-indicator">
-    </ul> 
+      <li v-for="(item, index) in products" :key="item.id">
+        <img :src="item.logo" alt="" />
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -9,15 +12,21 @@
 export default {
   data() {
     return {
-      products: []
-    }
+      products: [],
+    };
   },
   created() {
-    // this.
-  }
-}
+    this.request.get("/products").then((response) => {
+      this.products = response;
+    });
+  },
+};
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.product {
+  &-fullpage-indicator {
+   
+  }
+}
 </style>

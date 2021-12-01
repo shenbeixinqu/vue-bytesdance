@@ -53,7 +53,9 @@
       <!--字节范-->
       <div class="byteStandard content-item-block">
         <h1 class="title">字节范</h1>
-        <div class="desc">字节范是字节跳动企业文化的重要组成部分，是我们共同认可的行为准则</div>
+        <div class="desc">
+          字节范是字节跳动企业文化的重要组成部分，是我们共同认可的行为准则
+        </div>
         <div class="content">
           <div class="image">
             <span>111</span>

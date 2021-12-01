@@ -1,8 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      <a href="/">
-      </a>
+      <a href="/"> </a>
     </div>
     <ul class="navbar">
       <router-link to="/">主页</router-link>
@@ -16,11 +15,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>
