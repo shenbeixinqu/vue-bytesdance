@@ -11,10 +11,18 @@
       </li>
     </ul>
     <transition :name="transitionName">
-      <div>
+      <div class="view-wrapper" :style="`backgroundImage:url(${item.cover})`">
         <div class="content">
           <div class="logo">
-            
+            <img :src="item.logo" width="100%" height="100%" alt />
+          </div>
+          <h2>{{ item.title }}</h2>
+          <div class="description">{{ item.description }}</div>
+          <div class="subDescription">{{ item.subDescription }}</div>
+          <div class="link">
+            更多信息,请访问
+            <br />
+            <span>{{ item.link }}</span>
           </div>
         </div>
       </div>
@@ -29,13 +37,29 @@ export default {
       products: [],
       activeIndex: 0,
       transitionName: "",
+      loading: false,
     };
   },
+  watch: {
+    activeIndex(newVal, oldVal) {
+      console.log("newVal", newVal, "oldVal", oldVal);
+      console.log("params", this.$route);
+    },
+  },
   created() {
+    this.loading = true;
     this.request.get("/products").then((response) => {
-      console.log("res", response)
+      console.log("res", response);
       this.products = response;
+      this.loading = false;
+      console.log("params", this.$route.params);
     });
+  },
+  computed: {
+    item() {
+      console.log("products", this.products[this.activeIndex]);
+      return this.products[this.activeIndex] || {};
+    },
   },
 };
 </script>
@@ -66,6 +90,36 @@ export default {
       img {
         width: 100%;
         height: 100%;
+      }
+    }
+  }
+
+  .view-wrapper {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+
+    .content {
+      width: 300px;
+      .logo {
+        height: 80px;
+        width: 80px;
+      }
+      h2 {
+        margin: 30px 0;
+      }
+      .descrtption,
+      .subDescription {
+        color: #aaa;
+        line-height: 1.4;
+      }
+      .link {
+        margin-top: 40px;
+        span {
+          color: @main-color;
+        }
       }
     }
   }
