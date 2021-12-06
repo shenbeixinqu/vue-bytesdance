@@ -33,8 +33,8 @@ export default {
   name: "Header",
   data() {
     return {
-      state:store.state
-    }
+      state: store.state,
+    };
   },
 };
 </script>

@@ -89,7 +89,7 @@ export default {
 <style lang="less" scoped>
 .home {
   .main {
-    width: @main-weight;
+    width: @main-width;
     margin: auto;
   }
   .content-item-block {
@@ -101,7 +101,7 @@ export default {
 .banner {
   height: 100vh;
   min-height: 400px;
-  min-width: @main-weight;
+  min-width: @main-width;
   display: flex;
   flex-direction: column;
   justify-content: center;
