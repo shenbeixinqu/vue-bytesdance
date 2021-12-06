@@ -36,31 +36,18 @@
 
       <!--职位-->
       <div class="job-category content-item-block">
-        <h2 class="job-category-title">探索你感兴趣的职位</h2>
-        <ul class="job-category-list">
+        <h2 class="job-category-title title">探索你感兴趣的职位</h2>
+        <ul class="job-category-list clearfix">
           <li
             v-for="item in jobCategories"
             :key="item.id"
             class="job-category-item"
           >
-            <div class="image" :style="`background:url(${item.image})`">
+            <div class="image" :style="`backgroundImage:url(${item.image})`">
               <span>{{ item.zh_name }}</span>
             </div>
           </li>
         </ul>
-      </div>
-
-      <!--字节范-->
-      <div class="byteStandard content-item-block">
-        <h1 class="title">字节范</h1>
-        <div class="desc">
-          字节范是字节跳动企业文化的重要组成部分，是我们共同认可的行为准则
-        </div>
-        <div class="content">
-          <div class="image">
-            <span>111</span>
-          </div>
-        </div>
       </div>
     </div>
   </div>
